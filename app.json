@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "Carbon0",
+    "slug": "Carbon0",
+    "scheme": "carbon0",
+    "version": "1.0.0",
+    "assetBundlePatterns": ["**/*"]
+  }
+}
