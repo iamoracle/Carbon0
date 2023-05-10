@@ -43,8 +43,8 @@ const RetiredScreen = ({ navigation }) => {
     const _carbons = data?.user?.retirementsCreated ?? [];
 
     const tokens = _carbons.map((carbon) => {
-      const { amount, token } = carbon;
-      const { id, name, symbol, score }: any = token;
+      const { id, amount, token } = carbon;
+      const { name, symbol, score }: any = token;
       return {
         id,
         name,

@@ -29,7 +29,6 @@ export function Web3Button({ navigation }) {
             try {
               ModalCtrl.open();
             } catch (error) {
-              console.log("signed rejected");
             }
           }}
           style={tw`bg-black py-3 px-5 rounded-md`}

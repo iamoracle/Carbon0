@@ -8,6 +8,7 @@ import useRandomImage from "./../hooks/useRandomImage";
 
 const OwnedCard = ({
   id,
+  tokenID,
   name,
   symbol,
   balance,
@@ -30,7 +31,7 @@ const OwnedCard = ({
             style={tw`bg-gray-800 py-2 px-4 rounded`}
             onPress={() => {
               toggleRetireAndMintModal();
-              setToken(id);
+              setToken(tokenID);
             }}
           >
             <Text style={tw`text-center text-white font-bold`}>
@@ -41,7 +42,7 @@ const OwnedCard = ({
             style={tw`bg-gray-800 py-2 px-4 rounded`}
             onPress={() => {
               toggleRetireModal(true);
-              setToken(id);
+              setToken(tokenID);
             }}
           >
             <Text style={tw`text-center text-white font-bold`}>Retire</Text>
@@ -76,6 +77,7 @@ const OwnedsCard = ({ carbons, loading, error }) => {
         <OwnedCard
           key={carbon.id}
           id={carbon.id}
+          tokenID={carbon.tokenID}
           name={carbon.name}
           symbol={carbon.symbol}
           balance={carbon.balance}

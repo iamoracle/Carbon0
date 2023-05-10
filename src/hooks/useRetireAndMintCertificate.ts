@@ -29,7 +29,6 @@ const useRetireAndMintCertificate = () => {
 
       return [receipt, false];
     } catch (error) {
-      console.error(error);
       return [false, error];
     }
   };

@@ -23,7 +23,6 @@ const AvatarModal = ({ avatarModalVisible, toggleAvatarModal, navigation }) => {
 
     const _getNCTBalance = async () => {
       const sdk = getToucanSDK(getEtherProvider(provider));
-      console.log(sdk.getRegistryContract());
       const nct = await sdk.getPoolContract("NCT");
 
       const _NCTBalance = await nct.balanceOf(address);

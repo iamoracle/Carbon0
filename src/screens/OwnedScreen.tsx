@@ -43,11 +43,11 @@ const OwnedScreen = ({ navigation }) => {
     const _carbons = data?.user?.tokensOwned ?? [];
 
     const tokens = _carbons.map((carbon) => {
-      const { balance, token } = carbon;
-      const { id, name, symbol, score }: any = token;
-
+      const { id, balance, token } = carbon;
+      const { id: tokenID, name, symbol, score }: any = token;
       return {
         id,
+        tokenID,
         name,
         symbol,
         score,
