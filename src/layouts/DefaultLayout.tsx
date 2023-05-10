@@ -25,15 +25,8 @@ const DefaultLayout = ({ navigation, children }) => {
         color: "black",
       },
       {
-        text: "Your Projects",
+        text: "Your TCO2",
         name: "OwnedScreen",
-        position: 1,
-        buttonSize: 50,
-        color: "black",
-      },
-      {
-        text: "Redeemed TCO2",
-        name: "RedeemedScreen",
         position: 1,
         buttonSize: 50,
         color: "black",
@@ -52,20 +45,20 @@ const DefaultLayout = ({ navigation, children }) => {
         buttonSize: 50,
         color: "black",
       },
-      {
-        text: "Trade TCO2",
-        name: "ComingSoon",
-        position: 1,
-        buttonSize: 50,
-        color: "black",
-      },
-      {
-        text: "Help",
-        name: "ComingSoon",
-        position: 1,
-        buttonSize: 50,
-        color: "black",
-      },
+      // {
+      //   text: "Trade TCO2",
+      //   name: "ComingSoon",
+      //   position: 1,
+      //   buttonSize: 50,
+      //   color: "black",
+      // },
+      // {
+      //   text: "Help",
+      //   name: "ComingSoon",
+      //   position: 1,
+      //   buttonSize: 50,
+      //   color: "black",
+      // },
     ];
 
     setActions(ACTIONS.filter((action) => action.name !== screenName));
