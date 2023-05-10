@@ -1,7 +1,6 @@
 import AuthScreen from "./screens/AuthScreen";
 import HomeScreen from "./screens/HomeScreen";
 import RetiredScreen from "./screens/RetiredScreen";
-import RedeemedScreen from "./screens/RedeemedScreen";
 import OwnedScreen from "./screens/OwnedScreen";
 import ComingSoon from "./screens/ComingSoon";
 
@@ -28,10 +27,6 @@ const screens = [
   {
     name: "RetiredScreen",
     component: RetiredScreen,
-  },
-  {
-    name: "RedeemedScreen",
-    component: RedeemedScreen,
   },
   {
     name: "OwnedScreen",
