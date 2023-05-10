@@ -3,6 +3,7 @@ import HomeScreen from "./screens/HomeScreen";
 import RetiredScreen from "./screens/RetiredScreen";
 import RedeemedScreen from "./screens/RedeemedScreen";
 import OwnedScreen from "./screens/OwnedScreen";
+import ComingSoon from "./screens/ComingSoon";
 
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
@@ -35,6 +36,10 @@ const screens = [
   {
     name: "OwnedScreen",
     component: OwnedScreen,
+  },
+  {
+    name: "ComingSoon",
+    component: ComingSoon,
   },
 ];
 

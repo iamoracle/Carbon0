@@ -18,6 +18,13 @@ const DefaultLayout = ({ navigation, children }) => {
 
     const ACTIONS = [
       {
+        text: "Home",
+        name: "HomeScreen",
+        position: 1,
+        buttonSize: 50,
+        color: "black",
+      },
+      {
         text: "Your Projects",
         name: "OwnedScreen",
         position: 1,
@@ -25,22 +32,36 @@ const DefaultLayout = ({ navigation, children }) => {
         color: "black",
       },
       {
-        text: "RedeemedScreen TCO2s",
+        text: "Redeemed TCO2",
         name: "RedeemedScreen",
         position: 1,
         buttonSize: 50,
         color: "black",
       },
       {
-        text: "Retired TCO2s",
+        text: "Retired TCO2",
         name: "RetiredScreen",
         position: 1,
         buttonSize: 50,
         color: "black",
       },
       {
-        text: "Home",
-        name: "HomeScreen",
+        text: "Trade NCT & BCT",
+        name: "ComingSoon",
+        position: 1,
+        buttonSize: 50,
+        color: "black",
+      },
+      {
+        text: "Trade TCO2",
+        name: "ComingSoon",
+        position: 1,
+        buttonSize: 50,
+        color: "black",
+      },
+      {
+        text: "Help",
+        name: "ComingSoon",
         position: 1,
         buttonSize: 50,
         color: "black",
