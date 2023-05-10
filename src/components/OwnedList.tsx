@@ -1,5 +1,5 @@
-import React from "react";
-import { ScrollView, View } from "react-native";
+import React, { useState } from "react";
+import { RefreshControl, ScrollView, View } from "react-native";
 
 import tw from "../../tailwind";
 import DefaultLayout from "../layouts/DefaultLayout";
@@ -15,12 +15,28 @@ type Prop = {
 };
 
 const OwnedList = ({ navigation, setQuery, loading, error, carbons }: Prop) => {
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const handleRefresh = () => {
+    setIsRefreshing(true);
+
+    setQuery("");
+
+    setIsRefreshing(false);
+  };
   return (
     <DefaultLayout navigation={navigation}>
       <View style={tw`px-5`}>
         <View style={tw`mb-10`}>
           <Header setQuery={setQuery} navigation={navigation} />
-          <ScrollView>
+          <ScrollView
+            refreshControl={
+              <RefreshControl
+                refreshing={isRefreshing}
+                onRefresh={handleRefresh}
+              />
+            }
+          >
             <View style={tw`mt-4`}>
               <OwnedsCard carbons={carbons} loading={loading} error={error} />
             </View>

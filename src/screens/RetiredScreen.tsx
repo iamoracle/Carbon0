@@ -11,6 +11,7 @@ const DEFAULT_QUERY = gql`
       id
       retirementsCreated {
         id
+        amount
         token(where: { name_contains_nocase: $searchQuery }, first: $first) {
           id
           name
@@ -41,7 +42,17 @@ const RetiredScreen = ({ navigation }) => {
 
     const _carbons = data?.user?.retirementsCreated ?? [];
 
-    const tokens = _carbons.map((carbon) => carbon.token);
+    const tokens = _carbons.map((carbon) => {
+      const { amount, token } = carbon;
+      const { id, name, symbol, score }: any = token;
+      return {
+        id,
+        name,
+        symbol,
+        score,
+        amount,
+      };
+    });
 
     initializeCarbons(tokens);
     setCarbons(tokens);

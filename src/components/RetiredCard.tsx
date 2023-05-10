@@ -4,7 +4,7 @@ import tw from "../../tailwind";
 import Spinner from "react-native-loading-spinner-overlay";
 import useRandomImage from "./../hooks/useRandomImage";
 
-const RetiredCard = ({ id, name, symbol, balance, randomizeImage }) => {
+const RetiredCard = ({ id, name, symbol, amount, randomizeImage }) => {
   return (
     <View style={tw`py-3 border-b border-gray-300 rounded-lg mb-4`}>
       <View style={tw`px-4 py-4`}>
@@ -12,7 +12,7 @@ const RetiredCard = ({ id, name, symbol, balance, randomizeImage }) => {
         <View style={tw`mt-4`}>
           <Text style={tw`text-xl text-gray-800 font-bold`}>{name}</Text>
           <Text style={tw`text-sm text-gray-800 mt-1`}>{symbol}</Text>
-          <Text style={tw`text-sm text-gray-800 mt-1`}>{balance}</Text>
+          <Text style={tw`text-sm text-gray-800 mt-1`}>{amount}</Text>
         </View>
       </View>
     </View>
@@ -32,7 +32,7 @@ const RetiredsCard = ({ carbons, loading, error }) => {
           id={carbon.id}
           name={carbon.name}
           symbol={carbon.symbol}
-          balance={carbon.balance}
+          amount={carbon.amount}
           randomizeImage={randomizeImage}
         />
       ))}
