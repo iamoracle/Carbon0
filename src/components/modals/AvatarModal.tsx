@@ -6,6 +6,8 @@ import useBalance from "../../hooks/useBalance";
 import { truncate } from "truncate-ethereum-address";
 import { useWeb3Modal } from "./../../helpers/tweaks/useWeb3Modal";
 import getToucanSDK from "./../../helpers/tweaks/toucan";
+import { getEtherProvider } from "./../../helpers/provider";
+import { ethers } from "ethers";
 
 const AvatarModal = ({ avatarModalVisible, toggleAvatarModal, navigation }) => {
   const address = useAddress();
@@ -17,13 +19,16 @@ const AvatarModal = ({ avatarModalVisible, toggleAvatarModal, navigation }) => {
   const { disconnect, provider } = useWeb3Modal();
 
   useEffect(() => {
+    if (address === "0x0000000000000000000000000000000000000000") return;
+
     const _getNCTBalance = async () => {
-      const sdk = getToucanSDK(provider);
+      const sdk = getToucanSDK(getEtherProvider(provider));
+      console.log(sdk.getRegistryContract());
       const nct = await sdk.getPoolContract("NCT");
 
-      const _NCTBalance = nct.getBalance(address);
+      const _NCTBalance = await nct.balanceOf(address);
 
-      setNCTBalance(_NCTBalance);
+      setNCTBalance(ethers.utils.formatUnits(_NCTBalance, "ether"));
     };
     _getNCTBalance();
   }, [address]);
