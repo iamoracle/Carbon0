@@ -11,7 +11,7 @@ const useAddress = () => {
   useEffect(() => {
     const _getAddress = async () => {
       const address = await getAddress();
-      setAddress(address);
+      setAddress(address?.toLowerCase());
     };
     _getAddress();
   }, []);
