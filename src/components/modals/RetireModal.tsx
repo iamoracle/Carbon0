@@ -71,7 +71,7 @@ const OffsetModal = ({ token, modalVisible, toggleModal }) => {
           ]}
         >
           <View style={tw`bg-white w-full p-4 rounded-t-lg shadow`}>
-            <Text style={tw`text-lg font-bold mb-2`}>Offset Carbon</Text>
+            <Text style={tw`text-lg font-bold mb-2`}>Retire Carbon</Text>
             <TextInput
               placeholder="Enter amount"
               value={amount.toString()}

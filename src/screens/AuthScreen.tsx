@@ -12,7 +12,7 @@ const AuthScreen = ({ navigation }) => {
         style={tw`flex-1 justify-center items-center`}
       >
         <Text style={tw`text-3xl font-bold pb-8 text-white`}>
-          Welcome to Caborn0
+          Welcome to Carbon0
         </Text>
         <Web3Button navigation={navigation} />
       </ImageBackground>
