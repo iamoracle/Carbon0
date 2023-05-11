@@ -53,11 +53,15 @@ git clone https://github.com/iamoracle/Carbon0
 
 Install Dependencies:
 
-```yarn install```
+```bash
+yarn install
+```
 
 Run app:
 
-```expo start```
+```bash
+expo start
+```
 
 You might need to install XCode or Android Emulator on your device.
 
@@ -81,8 +85,8 @@ Finally,  we are unable to share the expo demo URL due to Apple Policy restricti
 
 ## Team
 
-[Oyeniyi Abiola Peace](https://twitter.com/_iamoracle)
-[Ayewa Precious Olamide](https://twitter.com/darleneprecy)
+* [Oyeniyi Abiola Peace](https://twitter.com/_iamoracle)
+* [Ayewa Precious Olamide](https://twitter.com/darleneprecy)
 
 ## Special Thanks
 
