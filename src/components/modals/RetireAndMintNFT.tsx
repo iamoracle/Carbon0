@@ -93,6 +93,7 @@ const OffsetModal = ({ token, modalVisible, toggleModal }) => {
             <Text style={tw`text-lg font-bold mb-2`}>Retire and Mint NFT</Text>
             <TextInput
               placeholder="Enter amount"
+              placeholderTextColor={"gray"}
               value={amount.toString()}
               onChangeText={(e) => {
                 let value = parseInt(e);
@@ -101,11 +102,12 @@ const OffsetModal = ({ token, modalVisible, toggleModal }) => {
                 }
                 setAmount(value);
               }}
-              style={tw`bg-gray-100 p-2 rounded-md border border-gray-400 mb-2`}
+              style={tw`bg-white p-2 rounded-md border border-gray-400 mb-2`}
               keyboardType="numeric"
             />
             <TextInput
               placeholder="Enter name"
+              placeholderTextColor={"gray"}
               value={name}
               onChangeText={setName}
               style={tw`bg-gray-100 p-2 rounded-md border border-gray-400 mb-2`}
@@ -113,6 +115,7 @@ const OffsetModal = ({ token, modalVisible, toggleModal }) => {
             <TextInput
               placeholder="Enter message (optional)"
               value={message}
+              placeholderTextColor={"gray"}
               onChangeText={setMessage}
               style={tw`bg-gray-100 p-2 rounded-md border border-gray-400 mb-2`}
             />

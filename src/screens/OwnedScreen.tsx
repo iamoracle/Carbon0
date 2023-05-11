@@ -38,7 +38,8 @@ const OwnedScreen = ({ navigation }) => {
   });
 
   useEffect(() => {
-    if (address === "0x0000000000000000000000000000000000000000") return;
+    if (address === "0x0000000000000000000000000000000000000000" || !address)
+      return;
 
     const _carbons = data?.user?.tokensOwned ?? [];
 
