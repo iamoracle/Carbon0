@@ -8,6 +8,7 @@ import { useWeb3Modal } from "./../../helpers/tweaks/useWeb3Modal";
 import getToucanSDK from "./../../helpers/tweaks/toucan";
 import { getEtherProvider } from "./../../helpers/provider";
 import { ethers } from "ethers";
+import Jazzicon from "react-native-jazzicon";
 
 const AvatarModal = ({ avatarModalVisible, toggleAvatarModal, navigation }) => {
   const address = useAddress();
@@ -55,12 +56,7 @@ const AvatarModal = ({ avatarModalVisible, toggleAvatarModal, navigation }) => {
         <View style={tw`bg-white py-10 px-12 rounded-5`}>
           <View style={tw`flex justify-center items-center`}>
             <View style={tw`my-3`}>
-              <Image
-                source={{
-                  uri: "https://loremflickr.com/30/30/person?random=5",
-                }}
-                style={tw`rounded-full h-12 w-12 mb-2`}
-              />
+              <Jazzicon size={48} address={address} />
             </View>
             <Text style={tw`mb-3 text-gray-900`}>{truncate(address)}</Text>
             <Text style={tw`text-gray-600 mb-3`}>{balance} CELO</Text>

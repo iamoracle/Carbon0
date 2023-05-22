@@ -1,11 +1,14 @@
+import useAddress from "./../hooks/useAddress";
 import React, { useCallback, useState } from "react";
 import { TextInput, TouchableOpacity, View, Image } from "react-native";
+import Jazzicon from "react-native-jazzicon";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import tw from "../../tailwind";
 import AvatarModal from "./modals/AvatarModal";
 
 const Header = ({ setQuery, navigation }) => {
   const [queryCache, setQueryCache] = useState("");
+  const address = useAddress();
 
   const handleSearch = useCallback(() => {
     setQuery(queryCache);
@@ -30,10 +33,7 @@ const Header = ({ setQuery, navigation }) => {
         />
       </View>
       <TouchableOpacity onPress={() => setAvatarModalVisible(true)}>
-        <Image
-          source={{ uri: "https://loremflickr.com/30/30/person?random=5" }}
-          style={tw`rounded-full h-12 w-12`}
-        />
+        <Jazzicon size={48} address={address} />
       </TouchableOpacity>
       <AvatarModal
         navigation={navigation}
