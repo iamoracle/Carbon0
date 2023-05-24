@@ -146,4 +146,4 @@ package-lock.json
 .metro-health-check*
 
 # ignoring expo folder
-.expo
+.expo/
