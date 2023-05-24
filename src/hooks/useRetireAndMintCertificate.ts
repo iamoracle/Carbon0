@@ -1,6 +1,6 @@
 import { useWeb3Modal } from "@web3modal/react-native";
 import { getEtherProvider } from "../helpers/provider";
-import getToucanSDK from "./../helpers/tweaks/toucan";
+import getToucanSDK from "../helpers/toucan";
 import { ethers } from "ethers";
 
 const useRetireAndMintCertificate = () => {

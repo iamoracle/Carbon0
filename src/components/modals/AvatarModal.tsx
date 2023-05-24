@@ -5,7 +5,7 @@ import useAddress from "../../hooks/useAddress";
 import useBalance from "../../hooks/useBalance";
 import { truncate } from "truncate-ethereum-address";
 import { useWeb3Modal } from "./../../helpers/tweaks/useWeb3Modal";
-import getToucanSDK from "./../../helpers/tweaks/toucan";
+import getToucanSDK from "../../helpers/toucan";
 import { getEtherProvider } from "./../../helpers/provider";
 import { ethers } from "ethers";
 import Jazzicon from "react-native-jazzicon";

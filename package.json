@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "expo start --dev-client",
+    "start": "expo start",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web"
@@ -13,7 +13,7 @@
     "@react-native-async-storage/async-storage": "1.17.11",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/stack": "^6.3.16",
-    "@web3modal/react-native": "^1.0.0-alpha.1",
+    "@web3modal/react-native": "^1.0.0-alpha.5",
     "base-64": "^1.0.0",
     "crypto-browserify": "^3.12.0",
     "ethers": "5.7.2",

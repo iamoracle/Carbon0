@@ -1,7 +1,7 @@
 import { useWeb3Modal } from "@web3modal/react-native";
 import { getEtherProvider } from "./../helpers/provider";
 import { ethers } from "ethers";
-import getToucanSDK from "./../helpers/tweaks/toucan";
+import getToucanSDK from "../helpers/toucan";
 
 const useRedeemAuto = () => {
   const { provider } = useWeb3Modal();

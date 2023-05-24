@@ -1,14 +1,15 @@
 import { Text, TouchableOpacity } from "react-native";
 import { useSnapshot } from "valtio";
-
+import { Web3Modal } from "@web3modal/react-native";
 import { ModalCtrl } from "@web3modal/react-native/src/controllers/ModalCtrl";
-import { OptionsCtrl } from "@web3modal/react-native/src/controllers/OptionsCtrl";
+import { AccountCtrl } from "@web3modal/react-native/src/controllers/AccountCtrl";
 
-import tw from "./../../../tailwind";
-import { Web3Modal } from "./Web3Modal";
+import tw from "../../tailwind";
+import metaData from "../providers/metadata";
+import sessionParams from "../providers/session";
 
-export function Web3Button({ navigation }) {
-  const optionsState = useSnapshot(OptionsCtrl.state);
+const ConnectButton = ({ navigation }) => {
+  const accountCtrl = useSnapshot(AccountCtrl.state);
 
   const navigateToHomeScreen = () => {
     navigation.navigate("HomeScreen");
@@ -16,7 +17,7 @@ export function Web3Button({ navigation }) {
 
   return (
     <>
-      {optionsState.isConnected ? (
+      {accountCtrl.isConnected ? (
         <TouchableOpacity
           onPress={navigateToHomeScreen}
           style={tw`bg-black py-3 px-5 rounded-md`}
@@ -25,18 +26,23 @@ export function Web3Button({ navigation }) {
         </TouchableOpacity>
       ) : (
         <TouchableOpacity
-          onPress={() => {
+          onPress={async () => {
             try {
-              ModalCtrl.open();
-            } catch (error) {
-            }
+              await ModalCtrl.open();
+            } catch (error) {}
           }}
           style={tw`bg-black py-3 px-5 rounded-md`}
         >
           <Text style={tw`text-white font-semibold`}>Connect Wallet</Text>
         </TouchableOpacity>
       )}
-      <Web3Modal projectId="8e03eb00365a9543c926106717d2632f" />
+      <Web3Modal
+        sessionParams={sessionParams}
+        providerMetadata={metaData}
+        projectId="8e03eb00365a9543c926106717d2632f"
+      />
     </>
   );
-}
+};
+
+export default ConnectButton;
